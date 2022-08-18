@@ -131,10 +131,10 @@ export const StandardTooltipContent: React.FC<{
         task.end.getMonth() + 1
       }-${task.end.getFullYear()}`}</b>
       {task.end.getTime() - task.start.getTime() !== 0 && (
-        <p className={styles.tooltipDefaultContainerParagraph}>{`Duration: ${~~(
+        <p className={styles.tooltipDefaultContainerParagraph}>{`Duration: ${Math.abs(
           (task.end.getTime() - task.start.getTime()) /
-          (1000 * 60 * 60 * 24)
-        )} day(s)`}</p>
+          (1000 * 60) % 60
+        )} minute(s)`}</p>
       )}
 
       <p className={styles.tooltipDefaultContainerParagraph}>

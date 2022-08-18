@@ -126,9 +126,9 @@ export const StandardTooltipContent: React.FC<{
       <b style={{ fontSize: fontSize + 6 }}>{`${
         task.name
       }: ${String(task.start.getHours()).padStart(2, "0")}:${
-        String(task.start.getMinutes() + 1).padStart(2, "0")
+        String(task.start.getMinutes()).padStart(2, "0")
       }:${String(task.start.getSeconds()).padStart(2, "0")} - ${String(task.end.getHours()).padStart(2, "0")}:${
-        String(task.start.getMinutes() + 1).padStart(2, "0")
+        String(task.start.getMinutes()).padStart(2, "0")
       }:${String(task.start.getSeconds()).padStart(2, "0")}`}</b>
       {task.end.getTime() - task.start.getTime() !== 0 && (
         <p className={styles.tooltipDefaultContainerParagraph}>{`Duration: ${Math.floor(

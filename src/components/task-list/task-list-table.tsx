@@ -19,7 +19,8 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
   month: "numeric",
   day: "numeric",
   hour: "2-digit",
-  minute: "2-digit"
+  minute: "2-digit",
+  hour12: true
 };
 
 export const TaskListTableDefault: React.FC<{

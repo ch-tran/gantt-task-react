@@ -126,14 +126,14 @@ export const StandardTooltipContent: React.FC<{
       <b style={{ fontSize: fontSize + 6 }}>{`${
         task.name
       }: ${task.start.getHours()}:${
-        task.start.getMinutes() + 1
-      }:${task.start.getSeconds()} - ${task.end.getHours()}:${
-        task.end.getMinutes() + 1
-      }:${task.end.getSeconds()}`}</b>
+        String(task.start.getMinutes() + 1).padStart(2, "0")
+      }:${String(task.start.getSeconds()).padStart(2, "0")} - ${task.end.getHours()}:${
+        String(task.start.getMinutes() + 1).padStart(2, "0")
+      }:${String(task.start.getSeconds()).padStart(2, "0")}`}</b>
       {task.end.getTime() - task.start.getTime() !== 0 && (
-        <p className={styles.tooltipDefaultContainerParagraph}>{`Duration: ${Math.abs(
+        <p className={styles.tooltipDefaultContainerParagraph}>{`Duration: ${Math.floor(
           (task.end.getTime() - task.start.getTime()) /
-          (1000 * 60) % 60
+          (1000 * 60)
         )} minute(s)`}</p>
       )}
     </div>

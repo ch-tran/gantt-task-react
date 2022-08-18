@@ -15,10 +15,11 @@ const toLocaleDateStringFactory =
     return lds;
   };
 const dateTimeOptions: Intl.DateTimeFormatOptions = {
-  weekday: "short",
   year: "numeric",
-  month: "long",
+  month: "numeric",
   day: "numeric",
+  hour: "2-digit",
+  mintue: "2-digit"
 };
 
 export const TaskListTableDefault: React.FC<{
